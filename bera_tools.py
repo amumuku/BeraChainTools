@@ -251,14 +251,16 @@ class BeraChainTools(object):
                 assetIn=self.w3.to_checksum_address(info['assetIn']),
                 amountIn=int(info['amountIn']),
                 assetOut=self.w3.to_checksum_address(info['assetOut']),
-                amountOut=0 if index + 1 != len(swaps_list) else int(int(info['amountOut']) * 0.5),
+                amountOut=0 if index + 1 != len(swaps_list) else int(int(info['amountOut']) * 0.2),
+                # amountOut=int(info['amountOut'])if index + 1 != len(swaps_list) else int(int(info['amountOut']) * 0.5),
+
                 userData=b''))
         if asset_in_address.lower() == wbear_address.lower():
             swaps[0]['assetIn'] = zero_address
 
         txn = self.bex_contract.functions.batchSwap(kind=0, swaps=swaps, deadline=99999999).build_transaction(
             {'gas': 500000 + random.randint(1, 10000), 'value': amount_in if asset_in_address == wbear_address else 0,
-             'gasPrice': int(self.w3.eth.gas_price * 1.2), 'nonce': self.get_nonce()})
+             'gasPrice': int(self.w3.eth.gas_price * 1.4), 'nonce': self.get_nonce()})
         signed_txn = self.w3.eth.account.sign_transaction(txn, private_key=self.private_key)
         order_hash = self.w3.eth.send_raw_transaction(signed_txn.rawTransaction)
         return order_hash.hex()
@@ -404,7 +406,7 @@ class BeraChainTools(object):
             dict(
                 chainId=80085,
                 nonce=self.get_nonce(),
-                gasPrice=int(self.w3.eth.gas_price * 1.15),
+                gasPrice=int(self.w3.eth.gas_price * 1.25),
                 gas=134500 + random.randint(1, 10000),
                 to=self.w3.to_checksum_address(ooga_booga_address),
                 data='0xa6f2ae3a',
