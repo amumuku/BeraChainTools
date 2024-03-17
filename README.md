@@ -5,6 +5,11 @@ BeraChainTools 一个为 BeraChain 生态系统设计的工具集，旨在帮助
 ### 安装依赖
 
 在开始使用 BeraChainTools 之前，请确保安装了所有必要的依赖。
+扩展了.env文件：client_key 图片验证 和 key_list 钱包私钥
+```
+CLIENT_KEY=
+KEY_LIST=xxxx
+```
 
 执行以下命令以安装依赖：
 
