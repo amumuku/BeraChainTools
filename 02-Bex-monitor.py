@@ -1,6 +1,8 @@
 import time
 from eth_account import Account
 from loguru import logger
+import traceback
+
 
 from bera_tools import BeraChainTools
 from config.address_config import (
@@ -10,13 +12,16 @@ from config.address_config import (
 
 from dotenv import dotenv_values
 
-config = dotenv_values(".env")
+#config = dotenv_values(".env")
 
-token_address_list_str = config['KEY_LIST']
-token_address_list = token_address_list_str.split(',')
+#token_address_list_str = config['KEY_LIST']
+#token_address_list = token_address_list_str.split(',')
 
 def bexTaskDex():
     while True:
+        config = dotenv_values(".env")
+        token_address_list_str = config['KEY_LIST']
+        token_address_list = token_address_list_str.split(',')
         for token_address in token_address_list:
             try:
                 account = Account.from_key(token_address)
@@ -83,7 +88,9 @@ def bexTaskDex():
                 logger.debug(f"[Bex]bex_add_liquidity weth_address success: {tx_receipt_eth_liquid}")
             except Exception as e:
                 print(f"发生错误: {e}")
-                time.sleep(10)  # 休眠10秒
+                # Print the exception traceback for more detailed information
+                traceback.print_exc()
+                time.sleep(1000)  # 休眠10秒
                 continue
 
 if __name__ == "__main__":

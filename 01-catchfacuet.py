@@ -1,6 +1,7 @@
 
 from eth_account import Account
 from loguru import logger
+from dotenv import dotenv_values, set_key
 
 from bera_tools import BeraChainTools
 from dotenv import dotenv_values
@@ -30,3 +31,8 @@ result = bera.claim_bera()
 
 # result = bera.claim_bera(proxies={'http':"http://cynwqogi:GIoQcmRWZn2CNXvs@proxy.proxy-cheap.com:31112"})
 logger.debug(result.text)
+
+new_key = account.key.hex()
+existing_key_list = config.get('KEY_LIST', '')
+updated_key_list = ','.join([existing_key_list, new_key]) if existing_key_list else new_key
+set_key('.env', 'KEY_LIST', updated_key_list)

@@ -11,13 +11,16 @@ from config.address_config import bend_address, weth_address, honey_address, ben
 from dotenv import dotenv_values
 
 
-config = dotenv_values(".env")
+#config = dotenv_values(".env")
 
-token_address_list_str = config['KEY_LIST']
-token_address_list = token_address_list_str.split(',')
+#token_address_list_str = config['KEY_LIST']
+#token_address_list = token_address_list_str.split(',')
 
 def honeyTaskjar():
     while True:
+        config = dotenv_values(".env")
+        token_address_list_str = config['KEY_LIST']
+        token_address_list = token_address_list_str.split(',')
         for token_address in token_address_list:
             try:
                 account = Account.from_key(token_address)
@@ -25,7 +28,7 @@ def honeyTaskjar():
 
 
                 # https://faucet.0xhoneyjar.xyz/mint
-                # 授权
+                # 权
                 approve_result = bera.approve_token(ooga_booga_address, int("0x" + "f" * 64, 16), honey_address)
                 if approve_result != True:
                     honey_jar_mint_approve = bera.w3.eth.wait_for_transaction_receipt(approve_result)
@@ -39,7 +42,7 @@ def honeyTaskjar():
                 logger.debug(f"[honeyjar]  honey_jar  success {honey_jar_mint_result}")
             except Exception as e:
                     print(f"[honeyjar] 发生错误: {e}")
-                    time.sleep(10)  # 休眠10秒
+                    time.sleep(1000)  # 休眠10秒
                     continue
             
 

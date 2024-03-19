@@ -9,13 +9,16 @@ from config.address_config import bend_address, weth_address, honey_address, ben
 from dotenv import dotenv_values
 
 
-config = dotenv_values(".env")
+#config = dotenv_values(".env")
 
-token_address_list_str = config['KEY_LIST']
-token_address_list = token_address_list_str.split(',')
+#token_address_list_str = config['KEY_LIST']
+#token_address_list = token_address_list_str.split(',')
 
 def taskBend():
     while True:
+        config = dotenv_values(".env")
+        token_address_list_str = config['KEY_LIST']
+        token_address_list = token_address_list_str.split(',')
         for token_address in token_address_list:
             try:
                 account = Account.from_key(token_address)
@@ -60,9 +63,8 @@ def taskBend():
                 time.sleep(10)  # 休眠10秒
             except Exception as e:
                     print(f"[Bend] 发生错误: {e}")
-                    time.sleep(10)  # 休眠10秒
+                    time.sleep(1000)  # 休眠10秒
                     continue
 
 if __name__ == "__main__":
     taskBend()
-
