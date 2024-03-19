@@ -17,6 +17,26 @@ KEY_LIST=xxxx
 pip install -r requirements.txt
 ```
 
+```
+
+ 1029  nohup python3.9 02-Bex-monitor.py >bex.log &
+ 1030  nohup python3.9 03-Honey-monitor.py >honey.log &
+ 1031  nohup python3.9 04-Bend-monitor.py&
+ 1032  nohup python3.9 05-honeyjar.py >honeyjar.log &
+ 1036  nohup python3.9 00-timelyfacuet.py >facuet.log &
+
+```
+
+
+
+
+
+
+
+
+
+
+
 ### Examples
 
 - bera目前验证更改为 CloudflareTurnstile，目前支持 yecaptcha 和 2captcha 解码
