@@ -24,14 +24,15 @@ def run_logic():
     set_key('.env', 'KEY_LIST', updated_key_list)
 def main():
     # Run the logic immediately
+    
     run_logic()
 
     # Schedule the logic to run every 8 hours
     schedule.every(9).hours.do(run_logic)
 
     while True:
-        schedule.run_pending()
-        time.sleep(1)
+        # schedule.run_pending()
+        time.sleep(100)
 
 if __name__ == "__main__":
     main()
