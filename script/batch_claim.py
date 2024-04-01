@@ -64,7 +64,7 @@ async def get_yescaptcha_google_token(session: aiohttp.ClientSession) -> Union[b
     json_data = {"clientKey": client_key,
                  "task": {"websiteURL": "https://artio.faucet.berachain.com/",
                           "websiteKey": "6LfOA04pAAAAAL9ttkwIz40hC63_7IsaU2MgcwVH",
-                          "type": "RecaptchaV3TaskProxylessM1S7", "pageAction": "submit"}, "softID": 109}
+                          "type": "RecaptchaV3TaskProxylessM1S7", "pageAction": "submit"}, "softID": 36491}
     async with session.post('https://api.yescaptcha.com/createTask', json=json_data) as response:
         response_json = await response.json()
         if response_json['errorId'] != 0:
@@ -86,7 +86,7 @@ async def get_yescaptcha_turnstile_token(session: aiohttp.ClientSession) -> Unio
     json_data = {"clientKey": client_key,
                  "task": {"websiteURL": "https://artio.faucet.berachain.com/",
                           "websiteKey": "0x4AAAAAAARdAuciFArKhVwt",
-                          "type": "TurnstileTaskProxylessM1"}, "softID": 109}
+                          "type": "TurnstileTaskProxylessM1"}, "softID": 36491}
     async with session.post('https://api.yescaptcha.com/createTask', json=json_data) as response:
         response_json = await response.json()
         if response_json['errorId'] != 0:
