@@ -1,0 +1,12 @@
+2024-04-01 10:26:33.931 | DEBUG    | __main__:<module>:14 - address:0xea17ECa2AB4c339515bc84b1B8719D3E0c8208c7
+2024-04-01 10:26:33.931 | DEBUG    | __main__:<module>:15 - key:0x280b8cd23b057cf3136c84f060561f59070f9ce05dcd894d292f2e97fb3c9a0d
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/01-catchfacuet.py", line 26, in <module>
+    result = bera.claim_bera()
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 173, in claim_bera
+    google_token = self.get_solver_provider()
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 165, in get_solver_provider
+    return provider_dict[self.solver_provider]()
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 119, in get_yescaptcha_turnstile_token
+    raise ValueError(response)
+ValueError: {'errorId': 1, 'errorCode': 'ERROR_ZERO_BALANCE', 'errorDescription': '帐户余额不足: 请检查 10'}

@@ -1,0 +1,71 @@
+2024-04-01 10:59:30.198 | DEBUG    | __main__:bexTaskDex:32 - [Bex]0x132fF8a2E3d0B800CA1c890F528BCb1CdeC18eBf bera_balance get_balance 4411328221993499
+2024-04-01 10:59:34.289 | DEBUG    | __main__:bexTaskDex:35 - [Bex]bex_swap wbear_address  usdc_address :0x0b8c8c04c0de17bef1fb392e83c9c646c068b0ea8d16b1c8fcd1169092c4917b
+2024-04-01 10:59:35.138 | DEBUG    | __main__:bexTaskDex:40 - [Bex]0x132fF8a2E3d0B800CA1c890F528BCb1CdeC18eBf usdc_balance get_balance 448510181607268171
+2024-04-01 10:59:37.035 | DEBUG    | __main__:bexTaskDex:45 - [Bex]bex_swap_address start approve usdc_address waiting confirm:True
+2024-04-01 10:59:42.683 | DEBUG    | __main__:bexTaskDex:51 - [Bex]bex_swap usdc_address start bex_swap :0x2f2a89619377aed4cd2c3d553ab8272bf1bb94b219776b23348bde84e954e211
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/web3/eth/eth.py", line 474, in wait_for_transaction_receipt
+    _timeout.sleep(poll_latency)
+  File "/usr/local/lib/python3.9/site-packages/web3/_utils/threads.py", line 99, in sleep
+    self.check()
+  File "/usr/local/lib/python3.9/site-packages/web3/_utils/threads.py", line 92, in check
+    raise self
+web3._utils.threads.Timeout: 120 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/02-Bex-monitor.py", line 55, in bexTaskDex
+    tx_receipt = bera.w3.eth.wait_for_transaction_receipt(result)
+  File "/usr/local/lib/python3.9/site-packages/web3/eth/eth.py", line 478, in wait_for_transaction_receipt
+    raise TimeExhausted(
+web3.exceptions.TimeExhausted: Transaction HexBytes('0x2f2a89619377aed4cd2c3d553ab8272bf1bb94b219776b23348bde84e954e211') is not in the chain after 120 seconds
+2024-04-01 11:18:23.947 | DEBUG    | __main__:bexTaskDex:32 - [Bex]0x37bb9629E91AC717c5Cc9221a798FFdd3d841787 bera_balance get_balance 0
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/02-Bex-monitor.py", line 34, in bexTaskDex
+    result = bera.bex_swap(int(bera_balance * 0.2), wbear_address, usdc_address)
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 222, in bex_swap
+    assert balance != 0
+AssertionError
+2024-04-01 11:35:05.377 | DEBUG    | __main__:bexTaskDex:32 - [Bex]0x60882c86f8731277d3be340e02f5AD33D4c3dc57 bera_balance get_balance 0
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/02-Bex-monitor.py", line 34, in bexTaskDex
+    result = bera.bex_swap(int(bera_balance * 0.2), wbear_address, usdc_address)
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 222, in bex_swap
+    assert balance != 0
+AssertionError
+2024-04-01 11:51:47.178 | DEBUG    | __main__:bexTaskDex:32 - [Bex]0xB2A63561f7A00E1713D160dfcDcB9e3Fda039C15 bera_balance get_balance 0
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/02-Bex-monitor.py", line 34, in bexTaskDex
+    result = bera.bex_swap(int(bera_balance * 0.2), wbear_address, usdc_address)
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 222, in bex_swap
+    assert balance != 0
+AssertionError
+2024-04-01 12:08:28.155 | DEBUG    | __main__:bexTaskDex:32 - [Bex]0x85c16997e33b7cB8c1efc092C0b30c4638CcA76e bera_balance get_balance 0
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/02-Bex-monitor.py", line 34, in bexTaskDex
+    result = bera.bex_swap(int(bera_balance * 0.2), wbear_address, usdc_address)
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 222, in bex_swap
+    assert balance != 0
+AssertionError
+2024-04-01 12:25:09.751 | DEBUG    | __main__:bexTaskDex:32 - [Bex]0x974D1D9b0B3F36a70389c75Cf0EFA800f1553fB8 bera_balance get_balance 0
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/02-Bex-monitor.py", line 34, in bexTaskDex
+    result = bera.bex_swap(int(bera_balance * 0.2), wbear_address, usdc_address)
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 222, in bex_swap
+    assert balance != 0
+AssertionError
+2024-04-01 12:41:50.984 | DEBUG    | __main__:bexTaskDex:32 - [Bex]0xC9941ae1E32867e6219bC2947B31e1c4E630cC50 bera_balance get_balance 0
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/02-Bex-monitor.py", line 34, in bexTaskDex
+    result = bera.bex_swap(int(bera_balance * 0.2), wbear_address, usdc_address)
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 222, in bex_swap
+    assert balance != 0
+AssertionError
+2024-04-01 12:58:32.636 | DEBUG    | __main__:bexTaskDex:32 - [Bex]0xf9A97002C031B8f96F996db48887F4a2312987a2 bera_balance get_balance 0
+Traceback (most recent call last):
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/02-Bex-monitor.py", line 34, in bexTaskDex
+    result = bera.bex_swap(int(bera_balance * 0.2), wbear_address, usdc_address)
+  File "/Users/apple/Desktop/工具手册/开源代码收集/BeraChainTools/bera_tools.py", line 222, in bex_swap
+    assert balance != 0
+AssertionError

@@ -1,0 +1,18 @@
+2024-04-01 10:58:22.338 | DEBUG    | __main__:run_logic:14 - address:0xcD1340342560bB6c3b0798Be7d82ae207362aa54
+2024-04-01 10:58:22.338 | DEBUG    | __main__:run_logic:15 - key:0x8c841a328bdb708642dc24881689062f5e8632441cf256abb10c258466df1eb0
+2024-04-01 10:58:45.232 | DEBUG    | __main__:run_logic:20 - {"msg":"Added 0xcD1340342560bB6c3b0798Be7d82ae207362aa54 to the queue"}
+
+2024-04-01 10:59:21.345 | DEBUG    | __main__:run_logic:14 - address:0x12882740E394cfbf6505f0CfAD3b4404cd28Ea79
+2024-04-01 10:59:21.345 | DEBUG    | __main__:run_logic:15 - key:0xe211dee9350735eee6dcfb7e00217c2908f90c9449860cee60abffcd78fb0548
+2024-04-01 10:59:29.777 | DEBUG    | __main__:run_logic:20 - {"msg":"You have exceeded the rate limit. Please wait 7h47m33s before you try again"}
+
+2024-04-01 11:00:05.896 | DEBUG    | __main__:run_logic:14 - address:0x2C815b0c7C98D7D6917c34547E8b57F3FD517B91
+2024-04-01 11:00:05.896 | DEBUG    | __main__:run_logic:15 - key:0x48b746c27e6d2296653653bebc0f6927a0cafe04676a40ebaa8fd523532921c6
+2024-04-01 11:00:36.338 | DEBUG    | __main__:run_logic:20 - {"msg":"You have exceeded the rate limit. Please wait 7h46m27s before you try again"}
+
+2024-04-01 11:01:12.444 | DEBUG    | __main__:run_logic:14 - address:0xD0b84e7bFfB5935117aDD2A317A4c8458e1FAd80
+2024-04-01 11:01:12.445 | DEBUG    | __main__:run_logic:15 - key:0x5621e6764ed9c8cb0062be5506864fb50870aa67978e6f3f9e2c79ee2814a7ca
+2024-04-01 11:01:39.388 | DEBUG    | __main__:run_logic:20 - {"msg":"You have exceeded the rate limit. Please wait 7h57m6s before you try again"}
+
+2024-04-01 11:02:15.504 | DEBUG    | __main__:run_logic:14 - address:0xD4d9e20138D37e9a34eb0671Ff4541a36D965F7b
+2024-04-01 11:02:15.504 | DEBUG    | __main__:run_logic:15 - key:0x672590c4a7adde7b8632780001f06d23cabb784e38a460f76aa17039410919c8

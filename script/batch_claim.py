@@ -5,6 +5,7 @@
 import asyncio
 import json
 from typing import Union
+from eth_account import Account
 
 import aiofiles
 import aiohttp
@@ -139,7 +140,7 @@ async def write_to_file(address: Union[Address, ChecksumAddress]):
 
 
 async def read_to_file(file_path: str):
-    async with aiofiles.open('./claim_success.txt', 'r') as success_file:
+    async with aiofiles.open('/claim_success.txt', 'r') as success_file:
         claim_success = await success_file.read()
 
     async with aiofiles.open(file_path, 'r') as file:
@@ -197,6 +198,13 @@ async def run(file_path):
 
         await asyncio.gather(*[claim_wrapper(address) for address in address_list])
 
+# 生成1000个以太坊地址并写入到文件
+def generate_addresses():
+    with open('./address.txt', 'w') as file:
+        for _ in range(1000):
+            account = Account.create()
+            print(f'key:{account.key.hex()}')
+            file.write(account.address + '\n')
 
 if __name__ == '__main__':
     """
@@ -204,14 +212,17 @@ if __name__ == '__main__':
     运行时会读取当前文件夹下的claim_success.txt文本，跳过已经成功的地址
     单进程性能会有瓶颈,大概一分钟能领1000左右,自行套多进程或复制多开
     """
+
     # 验证平台key
-    client_key = 'xxxxxxxxxxx'
+    client_key = '8a08de7739132d48e38ec481d675941a713cf62736491'
     # 目前支持使用yescaptcha 2captcha
     solver_provider = 'yescaptcha'
     # 代理获取链接 设置一次提取一个 返回格式为text
-    get_ip_url = 'http://127.0.0.1:8883/get_ip'
+    # get_ip_url = 'http://127.0.0.1:8883/get_ip'
+
+    get_ip_url="http://cynwqogi:GIoQcmRWZn2CNXvs@proxy.proxy-cheap.com:31112/get_ip"
     # 并发数量
-    max_concurrent = 128
+    max_concurrent = 1
     # 读取文件的路径 地址一行一个
     _file_path = './address.txt'
     asyncio.run(run(_file_path))
