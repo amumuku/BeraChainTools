@@ -27,7 +27,7 @@ def main():
     run_logic()
 
     # Schedule the logic to run every 8 hours
-    schedule.every(8).hours.do(run_logic)
+    schedule.every(9).hours.do(run_logic)
 
     while True:
         schedule.run_pending()

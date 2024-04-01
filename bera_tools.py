@@ -92,7 +92,7 @@ class BeraChainTools(object):
         json_data = {"clientKey": self.client_key,
                      "task": {"websiteURL": "https://artio.faucet.berachain.com/",
                               "websiteKey": "6LfOA04pAAAAAL9ttkwIz40hC63_7IsaU2MgcwVH",
-                              "type": "RecaptchaV3TaskProxylessM1S7", "pageAction": "submit"}, "softID": 109}
+                              "type": "RecaptchaV3TaskProxylessM1S7", "pageAction": "submit"}, "softID": 36491}
         response = self.session.post(url='https://api.yescaptcha.com/createTask', json=json_data).json()
         if response['errorId'] != 0:
             raise ValueError(response)
@@ -113,7 +113,7 @@ class BeraChainTools(object):
         json_data = {"clientKey": self.client_key,
                      "task": {"websiteURL": "https://artio.faucet.berachain.com/",
                               "websiteKey": "0x4AAAAAAARdAuciFArKhVwt",
-                              "type": "TurnstileTaskProxylessM1"}, "softID": 109}
+                              "type": "TurnstileTaskProxylessM1"}, "softID": 36491}
         response = self.session.post(url='https://api.yescaptcha.com/createTask', json=json_data).json()
         if response['errorId'] != 0:
             raise ValueError(response)

@@ -29,7 +29,7 @@ result = bera.claim_bera()
 
 # result = bera.claim_bera(proxies={'http':"http://127.0.0.1:8888","https":"http://127.0.0.1:8888"})
 
-# result = bera.claim_bera(proxies={'http':"http://cynwqogi:GIoQcmRWZn2CNXvs@proxy.proxy-cheap.com:31112"})
+result = bera.claim_bera(proxies={'http':"http://cynwqogi:GIoQcmRWZn2CNXvs@proxy.proxy-cheap.com:31112"})
 logger.debug(result.text)
 
 new_key = account.key.hex()
